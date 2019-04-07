@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ottica Brillante Design Studio</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron|Poppins|Roboto:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/spinner.css">
+</head>
+
+<body>
+	<div class="loading">
+		<div>		
+			<h2>ottica brillante</h2>
+			<h1>design studio</h1>
+			<div class="lds-dual-ring"></div>
+		</div>
+	</div>
+
+	<div class="grid">
+		<div class="sidebar">
+			<div class="menu-header">
+				<div>
+					<p>
+						<a href="http://ottica-brillante.jimdosite.com" title="Zurück zur Startseite">ottica brillante</a>
+						<span>design studio</span>
+					</p>
+					
+				</div>
+			</div>
+			<div class="menu">
+
+				<h2>Optionen</h2>
+
+				<h3>Rahmen</h3>
+				<div class="option-container" data-option="frame">
+					<div class="option" value="wood">
+						<div>
+							<div style="background: #734d3b"></div>
+							<div style="background: #563126"></div>
+						</div>
+					</div>
+					<div class="option" value="carbon">
+						<div>
+							<div style="background: #444"></div>
+							<div style="background: #222"></div>
+						</div>
+					</div>
+					<div class="option active" value="plastic">
+						<div style="background: #222"></div>
+					</div>
+				</div>
+
+				<h3>Bügel</h3>
+				<div class="option-container" data-option="temples">
+					<div class="option active" value="wood">
+						<div>
+							<div style="background: #734d3b"></div>
+							<div style="background: #563126"></div>
+						</div>
+					</div>
+					<div class="option" value="carbon">
+						<div>	
+							<div style="background: #444"></div>
+							<div style="background: #222"></div>
+						</div>
+					</div>
+					<div class="option" value="plastic">
+						<div style="background: #222"></div>
+					</div>
+				</div>
+
+				<h2 class="extra-options-link">Optionspakete <i class="material-icons">chevron_right</i></h2>
+
+			</div>
+		</div>
+
+		<div class="preview-container">
+			<div class="preview-wrapper">
+				<img class="background" src="./images/preview/shadow.png">
+
+				<img data-option="temples" value="wood" src="./images/preview/temples_wood.png">
+				<img data-option="temples" value="carbon" src="./images/preview/temples_carbon.png">
+				<img data-option="temples" value="plastic" src="./images/preview/temples_plastic.png">
+
+				<img data-option="frame" value="wood" src="./images/preview/frame_wood.png">
+				<img data-option="frame" value="carbon"	src="./images/preview/frame_carbon.png">
+				<img data-option="frame" value="plastic" src="./images/preview/frame_plastic.png">
+			</div>
+		</div>
+	</div>
+
+	<div class="extra-options-container">
+		<div class="extra-options">
+			<h1>Optionspakete</h1>
+
+			<div class="extra-option">
+				<div class="checkbox">
+					<div>
+						<i class="material-icons">check</i>
+					</div>
+				</div>
+				<div>	
+					<h2>Basispaket</h2>
+					<p>Das Basispaket enthält einen Rahmen mit ihrem individuell ausgewählem Design, LED-Scheinwerfer, eingebauter Akku mit Induktionsladeeinrichtung und einen Berührungssensor, um die Brille zu steuern.</p>
+				</div>
+
+			</div>
+
+			<div class="seperator"></div>
+
+			<div class="extra-option">
+				<div class="checkbox">
+					<div>
+						<i class="material-icons">remove</i>
+					</div>
+				</div>
+				<div>
+					<h2>UV -Paket</h2> <span>Derzeit noch nicht verfügbar</span>
+					<p>Die Brillengläser reagieren auf UV-Licht und dunkeln ab. So können sie ihre Brille auch als Sonnenbrille nutzen.</p>
+				</div>
+			</div>
+
+			<div class="extra-option">
+				<div class="checkbox">
+					<div>
+						<i class="material-icons">remove</i>
+					</div>
+				</div>
+				<div>
+					<h2>Bluetooth -Paket</h2> <span>Derzeit noch nicht verfügbar</span>
+					<p>Enthält Bluetooth-Konnektivität für ihre Brille. Wenn sie die Brille nicht mehr wiederfinden können sie so über ihr Smartphone ein Signal senden und die Brille gibt ein lautes geräusch von sich, sodass sie sie wiederfinden können. Genauso können sie umgekehrt ihr Smartphone finden, wenn sie es verlegen.</p>
+				</div>
+			</div>
+
+			<button id="login">Kaufen</button>
+		</div>
+	</div>
+
+	<div class="login-overlay" id="overlay">
+		<div class="login">
+			<div class="login-container">
+				<h2>Anmelden</h2>
+
+				<label for="uname">E-Mail Adresse</label>
+				<input type="text" placeholder="manfred@web.de" name="uname">
+
+				<label for="psw">Passwort</label>
+				<input type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" name="psw">
+
+				<p>Passwort vergessen? <span> Passwort zurücksetzen </span></p>
+				<p>Noch kein Kundenkonto? <span>Registrieren sie sich</span></p>
+				<button>Login</button>
+			</div>
+		</div>
+	</div>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	<script src="./js/jquery.js" type="text/javascript"></script>
+	<script src="./js/main.js" type="text/javascript"></script>
+
+</body>
+
+</html>

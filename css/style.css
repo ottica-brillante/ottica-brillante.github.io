@@ -1,0 +1,381 @@
+:root {
+	--dark-blue: #0c131f;
+	--blue: #91aed9;
+	--blue-hover: #323335;
+	--light-blue: #c5d1ec;
+	--blue-grey: #597685;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+
+	background: var(--dark-blue);
+	overflow: hidden;
+}
+
+.loading {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: var(--dark-blue);
+	z-index: 10;
+}
+
+.loading>div {
+	text-align: center;
+	margin-top: 200px;
+}
+
+.loading h2 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	font-size: 40px;
+}
+
+.loading h1 {
+	font-family: "Orbitron", Helvetica;
+	font-size: 60px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	grid-template-areas: "sidebar content";
+	height: 100%;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	background: var(--blue);
+}
+
+.menu-header {
+	display: inline-block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+.menu-header>div {
+	margin: 20px 0px 20px 0px;
+}
+
+.menu-header>div>p {
+	text-align: center;
+}
+
+.menu-header>div>p>a {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+	margin: 0;
+	color: #fff;
+	transition: color 0.2s ease-in-out;
+}
+
+.menu-header>div>p>a:hover {
+	color: #e5e5e5;
+}
+
+.menu-header>div>p>span {
+	text-align: center;
+	font-family: "Orbitron", sans-serif;
+}
+
+.menu {
+	padding: 0 20px 0 20px;
+}
+
+.menu h3, .menu h4 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+}
+
+.preview-container {
+	background: white;
+}
+
+.preview-wrapper {
+	position: relative;
+}
+
+.preview-container img {
+	position: absolute;
+	height: inherit;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.preview-container img.visible, .preview-container img.background {
+	opacity: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+	color: white;
+	display: block;
+	font-family: Poppins, sans-serif;
+	width: 100%;
+	margin: 10px 0 10px 0;
+}
+
+p, span, input, label {
+	color: white;
+	display: block;
+	font-family: "Roboto", sans-serif;
+	width: 100%;
+}
+
+/* Options */
+.option-container {
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0px 10px 25px 0px;
+}
+
+.option {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+
+	border-radius: 50%;
+	cursor: pointer;
+
+	transition: linear 0.1s;
+	border: solid 4px rgba(0, 0, 0, 0);
+}
+
+.option:hover, .option.active {
+	border: solid 4px #fff;
+}
+
+.option>div {
+	transform: rotate(-45deg);
+}
+
+.option>div>div {
+	width: 50px;
+	height: 25px;
+	outline: none;
+}
+
+/* Top half */
+.option>div>*:nth-child(1) {
+	border-radius: 100px 100px 0px 0px;
+}
+
+/* Bottom half*/
+.option>div>*:nth-child(2) {
+	border-radius: 0px 0px 100px 100px;
+}
+
+.option>div:only-of-type {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+.option:hover .tooltip {
+	opacity: 1;
+	visibility: visible;
+}
+
+.extra-options-link {
+	cursor: pointer;
+}
+
+.extra-options-link:hover {
+	color: #bbb;
+}
+
+.extra-options-link .material-icons {
+	font-size: 20px;
+}
+
+.extra-options-container {
+	width: 100%;
+	height: 100%;
+	background: var(--dark-blue);
+}
+
+.extra-options {
+	width: 75%;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 25px;
+}
+
+.extra-options>h1 {
+	margin: 80px 0 30px 0;
+}
+
+.extra-options .seperator {
+	margin: 15px auto;
+	width: 75%;
+	height: 0px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 1px;
+}
+
+.extra-option {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 10px 25px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	grid-template-areas: "sidebar content";
+}
+
+.extra-option .checkbox {
+	height: 100%;
+	margin-right: 15px;
+}
+
+.extra-option .checkbox div {
+	width: 30px;
+	height: 30px;
+	margin-top: 8px;
+	border-radius: 5px;
+}
+
+.extra-option .checkbox div .material-icons {
+	color: white;
+	font-size: 20px;
+}
+
+.extra-option:nth-of-type(1) {
+	cursor: pointer;
+}
+
+.extra-option:nth-of-type(3), .extra-option:nth-of-type(4) {
+	cursor: not-allowed;
+}
+
+.extra-option:nth-of-type(1) .checkbox div {
+	background: var(--blue);
+}
+
+.extra-option:nth-of-type(3) .checkbox div, .extra-option:nth-of-type(4) .checkbox div {
+	background: hsl(218, 30%, 12%);
+}
+
+.extra-option:nth-of-type(1) .checkbox div .material-icons {
+	color: white;
+	font-size: 30px;
+}
+
+.extra-option:nth-of-type(3) .checkbox div .material-icons, .extra-option:nth-of-type(4) .checkbox div .material-icons {
+	color: grey;
+	font-size: 30px;
+}
+
+.extra-option h2, .extra-option span {
+	display: inline;
+}
+
+.extra-option span {
+	font-family: "Roboto";
+	color: #aaa;
+	margin-left: 25px;
+}
+
+button {
+	cursor: pointer;
+	background: var(--light-blue);
+	color: var(--blue-hover);;
+	font-family: "Roboto", sans-serif;
+	font-size: 20px;
+	margin: 25px auto;
+	padding: 13px 30px;
+
+	border: none;
+	outline: none;
+	border-radius: 4px;
+
+	transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+	background: #b1bcd4;
+}
+
+.login-overlay {
+	display: none;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+.login {
+	margin: 10% auto;
+	background: #fff;
+	border-radius: 4px;
+	width: 500px;
+	height: 510px;
+}
+
+.login-container {
+	display: block;
+	padding: 20px 30px;
+}
+
+.login-container h2 {
+	color: black;
+}
+
+.login-container input {
+	display: inherit;
+	margin: 0 0 40px;
+	padding: 15px;
+	width: 91%;
+	border: 1px solid #c6c6c6;
+	border-radius: 5px;
+	font-size: 15px;
+	color: var(--blue-hover);;
+}
+
+.login-container input:focus {
+	outline: none;
+}
+
+.login-container label {
+	font-size: 18px;
+	color: var(--blue-hover);;
+	margin: 30px 0 10px;
+} 
+
+.login-container button {
+	display: inherit;
+	margin: 30px auto;
+	background: var(--dark-blue);
+	color: #fff;
+}
+
+.login-container p {
+	text-align: center;
+	font-size: 15px;
+	color: #939597;
+}
+
+.login-container p span {
+	display: inline;
+	color: #b1bcd4;
+	transition: color 0.3s ease-in-out;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.login-container p span:hover {
+	color: var(--blue);
+}
