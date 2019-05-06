@@ -3,8 +3,6 @@ var config = {
 	frame: "plastic"
 };
 
-var test;
-
 function updatePreview() {
 	$(".preview-wrapper img").removeClass("visible");
 
@@ -20,10 +18,7 @@ $(document).ready(function() {
 	$(document).on("contextmenu", function() { return false; });
 	$(document).on("selectstart", function() { return false; });
 
-	$(".option").click(function() {
-		// console.log($(this).attr("value"), $(this).parent().attr("data-option"));
-
-		$(this).siblings().removeClass("active");
+	$(".option").click(function() {$(this).siblings().removeClass("active");
 		$(this).addClass("active");
 
 		config[ $(this).parent().attr("data-option") ] = $(this).attr("value");		// Update config
@@ -32,6 +27,12 @@ $(document).ready(function() {
 
 	$(".extra-options-link").on("click", function() {
 		$("html, body").animate({ scrollTop: $(".extra-options-container").offset().top }, "medium");
+	});
+
+	$(".extra-option:not(.disabled)").on("click", function() {
+		$(".extra-option:not(.disabled)").removeClass("selected");
+
+		$(this).addClass("selected");
 	});
 
 	// Open Login overlay

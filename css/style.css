@@ -49,7 +49,7 @@ html, body {
 
 .sidebar {
 	grid-area: sidebar;
-	background: var(--blue);
+	background: rgba(255, 255, 255, 0.25);
 }
 
 .menu-header {
@@ -188,10 +188,11 @@ p, span, input, label {
 
 .extra-options-link {
 	cursor: pointer;
+	transition: color 0.3s ease-out;
 }
 
 .extra-options-link:hover {
-	color: #bbb;
+	color: #aaa;
 }
 
 .extra-options-link .material-icons {
@@ -212,11 +213,11 @@ p, span, input, label {
 }
 
 .extra-options>h1 {
-	margin: 80px 0 30px 0;
+	margin: 70px 0 10px 0;
 }
 
 .extra-options .seperator {
-	margin: 15px auto;
+	margin: 10px auto;
 	width: 75%;
 	height: 0px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
@@ -244,6 +245,7 @@ p, span, input, label {
 	height: 30px;
 	margin-top: 8px;
 	border-radius: 5px;
+	transition: background-color 0.2s ease-out;
 }
 
 .extra-option .checkbox div .material-icons {
@@ -251,28 +253,34 @@ p, span, input, label {
 	font-size: 20px;
 }
 
-.extra-option:nth-of-type(1) {
+.extra-option {
 	cursor: pointer;
 }
 
-.extra-option:nth-of-type(3), .extra-option:nth-of-type(4) {
+.extra-option.disabled {
 	cursor: not-allowed;
 }
 
-.extra-option:nth-of-type(1) .checkbox div {
+.extra-option.selected .checkbox div {
 	background: var(--blue);
 }
 
-.extra-option:nth-of-type(2) .checkbox div, .extra-option:nth-of-type(3) .checkbox div, .extra-option:nth-of-type(4) .checkbox div, .extra-option:nth-of-type(5) .checkbox div {
+.extra-option .checkbox div{
 	background: hsl(218, 30%, 12%);
 }
 
-.extra-option:nth-of-type(1) .checkbox div .material-icons {
+.extra-option .checkbox div .material-icons {
+	visibility: hidden;
+}
+
+.extra-option.selected .checkbox div .material-icons {
+	visibility: visible;
 	color: white;
 	font-size: 30px;
 }
 
-.extra-option:nth-of-type(2) .checkbox div .material-icons, .extra-option:nth-of-type(3) .checkbox div .material-icons, .extra-option:nth-of-type(4) .checkbox div .material-icons, .extra-option:nth-of-type(5) .checkbox div .material-icons {
+.extra-option.disabled .checkbox div .material-icons {
+	visibility:  visible;
 	color: grey;
 	font-size: 30px;
 }
@@ -293,7 +301,7 @@ button {
 	color: var(--blue-hover);;
 	font-family: "Roboto", sans-serif;
 	font-size: 20px;
-	margin: 25px auto;
+	margin: 20px auto;
 	padding: 13px 30px;
 
 	border: none;
